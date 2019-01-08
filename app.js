@@ -1,1 +1,1 @@
-var adminApp = angular.module('adminApp', ['ui.router']);
+var adminApp = angular.module('adminApp', ['ui.router','ngStorage']);

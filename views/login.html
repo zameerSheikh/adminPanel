@@ -4,7 +4,7 @@
         </a>
         <div class="login-module-wrapper clearfix">
                 <h3 class="text-center login-module-header">Admin Login</h3>
-                <form class="login-module-form" name="signinForm" ng-submit="signIn()" novalidate>
+                <form class="login-module-form" name="signinForm" ng-submit="login.adminLogin(user)" novalidate>
                     <div class="form-group">
                         <input type="email" id="email" name="email" ng-model="user.email" class="form-control" ng-class="{'error-field': (signinForm.email.$error.required || signinForm.email.$invalid) && visitedEmail}" ng-blur="visitedEmail = true" ng-focus="visitedEmail = false" placeholder="Enter your email" required/>
                         <!--<span class="error" ng-show="signinForm.email.$error.required && visitedEmail">Email is required</span>-->
