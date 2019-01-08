@@ -9,6 +9,20 @@
       url('assets/fonts/roboto-regular/roboto-regular.ttf') format('truetype'), /* Safari, Android, iOS */
       url('assets/fonts/roboto-regular/roboto-regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
+/* FONT PATH
+ * -------------------------- */
+
+ @font-face {
+  font-family: 'FontAwesome';
+  src: url('assets/fonts/font-awesome/fontawesome-webfont.eot?v=4.7.0');
+  src: url('assets/fonts/font-awesome/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),
+    url('assets/fonts/font-awesome}/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
+    url('assets/fonts/font-awesome/fontawesome-webfont.woff?v=4.7.0') format('woff'),
+    url('assets/fonts/font-awesome/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),
+    url('assets/fonts/font-awesome/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 .panel h2{ color:#444444; font-size:18px; margin:0 0 8px 0;}
 .panel p { color:#777777; font-size:14px; margin-bottom:30px; line-height:24px;}
 .login-form .form-control {
@@ -402,6 +416,19 @@ html { height: 100%;}
 }
 .login-module-container .engageto-logo img {
   margin: 0 auto;
+}
+.white-module-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 40px 20px;
+  position: relative;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 .login-module-container .login-module-wrapper {
   width: 100%;
@@ -816,4 +843,14 @@ color: #fff;
 .switch input.cmn-toggle-round:checked + label:after {
   margin-left: 26px;
 }
-/* styles for .maintainance mode starts here */
+.edit-delete .edit-icon{
+  color: #000;
+ }
+ .edit-delete .trash-icon{
+color: red;
+ }
+.edit-delete .edit-icon:hover, .edit-delete .trash-icon:hover{
+  text-decoration: none;
+  cursor: pointer;
+ }
+/* styles for maintainance mode starts here */
