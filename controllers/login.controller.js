@@ -18,7 +18,7 @@
 
         $scope.user = {
             email : '',
-            password: ''
+            password: '' 
         }
 
         function adminLogin(data){
