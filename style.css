@@ -417,18 +417,23 @@ html { height: 100%;}
 .login-module-container .engageto-logo img {
   margin: 0 auto;
 }
-.white-module-wrapper {
+.white-box-wrapper {
   width: 100%;
   margin: 0 auto;
-  padding: 0px 40px 20px;
+  padding: 0px 30px 10px;
   position: relative;
-  max-width: 800px;
+  max-width: 890px;
   background-color: #fff;
+  color: #000;
   border-radius: 5px;
   -o-border-radius: 5px;
   -ms-border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+}
+.white-box-wrapper .table-bordered>tbody>tr>td,
+.white-box-wrapper .table-bordered>thead>tr>th{
+  text-align: center;
 }
 .login-module-container .login-module-wrapper {
   width: 100%;
@@ -776,17 +781,15 @@ color: #fff;
 .form-group{
   text-align: center;
 }
-.maintainance-title{
-  color: #000;
+.maintainance-title{  
   text-align: center;
 }
 .utm-param-head {
   display: inline-block;
   margin-top: 3px;
   vertical-align: top;
-  color: #000;
-    font-size: 16px;
-    font-family: roboto-regular;
+  font-size: 16px;
+  font-family: roboto-regular;
 }
 .switch {
   display: inline-block;
