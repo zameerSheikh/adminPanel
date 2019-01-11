@@ -15,11 +15,11 @@
 
         $rootScope.adminApp = {
             toState: '',
-            isSidePanelRequired: false
+            isSidePanelRequired: false,
+            logout:logout
         };
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
-            console.log('event: ', event);
         
             $rootScope.adminApp.toState = toState.name;
 
@@ -34,6 +34,9 @@
             }
         });
 
+        function logout(){
+            $state.go('login');
+        }
         
     }
 }());

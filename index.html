@@ -30,7 +30,7 @@
                                 <a ui-sref="maintainanceMode()" class="hamburger is-closed" data-toggle="offcanvas">Maintainance Mode</a>
                             </li>                           
                             <li>
-                                <a class="hamburger is-closed" data-toggle="offcanvas" ui-sref="login">Logout</a>
+                                <a class="hamburger is-closed" data-toggle="offcanvas" href="#" ng-click="adminApp.logout();">Logout</a>
                             </li>                           
                         </ul>
                     </nav>
@@ -61,6 +61,7 @@
         <script src="/controllers/user.controller.js"></script>
         <script src="/controllers/maintainance.controller.js"></script>
         <script src="/controllers/login.controller.js"></script>
+        <script src="/directives/admin.directives.js"></script>
         <script src="/constants/app.constants.js"></script>
         <script src="/services/login.service.js"></script>
 </body>
