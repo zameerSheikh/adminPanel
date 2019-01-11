@@ -5,12 +5,14 @@
 
     applicationRun.$inject = [
         '$rootScope',
-        '$state'
+        '$state',
+        '$localStorage'
     ];
 
     function applicationRun(
         $rootScope,
-            $state
+            $state,
+            $localStorage
     ){
 
         $rootScope.adminApp = {
@@ -35,6 +37,7 @@
         });
 
         function logout(){
+            delete $localStorage.token;
             $state.go('login');
         }
         

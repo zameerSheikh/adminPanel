@@ -18,8 +18,6 @@
         $http,
         $q
     ){
-
-        console.log('inside login service');
         
         return {
             loginAdmin: loginAdmin,
