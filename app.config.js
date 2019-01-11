@@ -35,6 +35,11 @@ function appConfig(
         url          : '/maintainance',
         templateUrl  : 'views/maintainance.html',
         controller   : 'MaintainanceController'
+    })
+    .state('domain',{
+        url          : '/domains',
+        templateUrl  : 'views/domains.html',
+        controller   : 'DomainsController'
     });
 
     //$locationProvider.html5Mode(true);
