@@ -5,34 +5,51 @@
 
     loginController.$inject = [
         '$scope',
+        '$rootScope',
         'LoginService',
-        '$state'
+        '$state',
+        '$localStorage',
+        'AdminAppService',
+        '$timeout'
     ];
 
     function loginController(
         $scope,
+        $rootScope,
         LoginService,
-        $state
+        $state,
+        $localStorage,
+        AdminAppService,
+        $timeout
     ){
         $scope.login = {
-            adminLogin: adminLogin
+            adminLogin: adminLogin,
+            isLoading: false
         }
 
         $scope.user = {
-            email : '',
-            password: '' 
+            user_email : '',
+            user_password: '' 
         }
 
         function adminLogin(data){
             console.log('data: ', data);
-            // LoginService.loginAdmin(data).then(function(response){
-            //     console.log('response: ', response);
-            // }).catch(function(error){
-
-            // });
-            if(data.password === 'India@123'){
-                $state.go('users');
-            }
+            $scope.login.isLoading = true;
+            LoginService.loginAdmin(data).then(function(loginResponse){
+                $scope.login.isLoading = false;
+                console.log('response: ', loginResponse);
+                $localStorage.token = loginResponse.headers('sid');
+                $localStorage.adminId = loginResponse.data.data.admin_uuid;
+                AdminAppService.showSuccessMessage('Login Successfull');
+                $timeout(function(){
+                    $state.go('users');
+                },2000);
+            }).catch(function(error){
+                $scope.login.isLoading = false;
+            });
+            // if(data.password === 'India@123'){
+            //     $state.go('users');
+            // }
         }
     }
 }())
