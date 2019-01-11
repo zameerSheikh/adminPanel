@@ -6,22 +6,17 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Email</th>
                     <th>Address</th>
-                    <th>Get Domain</th>
-                    <th>Action</th>
+                    <th>Code verified</th>
+                    <th>is HTTPS</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>John carter</td>
-                    <td>johncarter@mail.com</td>
-                    <td><a href="yourvirtualhelpmate.com">yourvirtualhelpmate.com</a></td>
-                    <td>Ahex technologies, Madhapur.</td>
-                    <td class="edit-delete">
-                        <a class="fa fa-pencil edit-icon"></a>
-                        <a class="fa fa-trash trash-icon"></a>
-                    </td>
+                <tr ng-repeat="domain in domainsObj.allDomains">
+                    <td>{{domain.domain_name}}</td>
+                    <td>{{domain.domain_address}}</td>
+                    <td>{{domain.code_verified}}</td>
+                    <td>{{domain.https}}</td>
                 </tr>               
             </tbody>
         </table>

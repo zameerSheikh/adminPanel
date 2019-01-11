@@ -25,7 +25,7 @@
         
             $rootScope.adminApp.toState = toState.name;
 
-            if($rootScope.adminApp.toState === 'users' || $rootScope.adminApp.toState == 'maintainanceMode'){
+            if($rootScope.adminApp.toState === 'users' || $rootScope.adminApp.toState == 'maintainanceMode' || $rootScope.adminApp.toState == 'domain'){
                 $rootScope.adminApp.isSidePanelRequired = true;
             }
         });

@@ -36,12 +36,12 @@
             console.log('data: ', data);
             $scope.login.isLoading = true;
             LoginService.loginAdmin(data).then(function(loginResponse){
-                $scope.login.isLoading = false;
                 console.log('response: ', loginResponse);
                 $localStorage.token = loginResponse.headers('sid');
                 $localStorage.adminId = loginResponse.data.data.admin_uuid;
                 AdminAppService.showSuccessMessage('Login Successfull');
                 $timeout(function(){
+                    $scope.login.isLoading = false;
                     $state.go('users');
                 },2000);
             }).catch(function(error){
