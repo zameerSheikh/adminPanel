@@ -27,11 +27,15 @@
                                 <a ui-sref="users()" class="hamburger is-closed" data-toggle="offcanvas">Users</a>
                             </li>
                             <li>
+                                <a ui-sref="domain()" class="hamburger is-closed" data-toggle="offcanvas">Domain</a>
+                            </li>
+                            <li>
                                 <a ui-sref="maintainanceMode()" class="hamburger is-closed" data-toggle="offcanvas">Maintainance Mode</a>
                             </li>                           
                             <li>
                                 <a class="hamburger is-closed" data-toggle="offcanvas" href="#" ng-click="adminApp.logout();">Logout</a>
-                            </li>                           
+                            </li> 
+                                                        
                         </ul>
                     </nav>
                     <!-- /#sidebar-wrapper -->
@@ -59,6 +63,7 @@
         <script src="app.config.js"></script>
         <script src="sidebar.js"></script>
         <script src="/controllers/user.controller.js"></script>
+        <script src="/controllers/domains.controller.js"></script>
         <script src="/controllers/maintainance.controller.js"></script>
         <script src="/controllers/login.controller.js"></script>
         <script src="/directives/admin.directives.js"></script>
