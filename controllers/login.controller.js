@@ -5,12 +5,14 @@
 
     loginController.$inject = [
         '$scope',
-        'LoginService'
+        'LoginService',
+        '$state'
     ];
 
     function loginController(
         $scope,
-        LoginService
+        LoginService,
+        $state
     ){
         $scope.login = {
             adminLogin: adminLogin
@@ -28,6 +30,9 @@
             // }).catch(function(error){
 
             // });
+            if(data.password === 'India@123'){
+                $state.go('users');
+            }
         }
     }
 }())
