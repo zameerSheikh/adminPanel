@@ -7,17 +7,19 @@
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Address</th>
-                    <th>Get Domain</th>
+                    <!-- <th>Address</th> -->
+                    <th>Domains</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>John carter</td>
-                    <td>johncarter@mail.com</td>
-                    <td><a href="yourvirtualhelpmate.com">yourvirtualhelpmate.com</a></td>
-                    <td>Ahex technologies, Madhapur.</td>
+                <tr ng-repeat="user in users.usersList">
+                    <td>{{user.name !== ' '? user.name: 'User'}}</td>
+                    <td>{{user.email}}</td>
+                    <!-- <td><a href="yourvirtualhelpmate.com">yourvirtualhelpmate.com</a></td> -->
+                    <td>
+                        <p ng-repeat="domain in user.domains">{{domain.domain_address}}</p>
+                    </td>
                     <td class="edit-delete">
                         <a class="fa fa-pencil edit-icon"></a>
                         <a class="fa fa-trash trash-icon"></a>

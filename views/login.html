@@ -6,16 +6,16 @@
                 <h3 class="text-center login-module-header">Admin Login</h3>
                 <form class="login-module-form" name="signinForm" ng-submit="login.adminLogin(user)" novalidate>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" ng-model="user.email" class="form-control" ng-class="{'error-field': (signinForm.email.$error.required || signinForm.email.$invalid) && visitedEmail}" ng-blur="visitedEmail = true" ng-focus="visitedEmail = false" placeholder="Enter your email" required/>
+                        <input type="email" id="email" name="email" ng-model="user.user_email" class="form-control" ng-class="{'error-field': (signinForm.email.$error.required || signinForm.email.$invalid) && visitedEmail}" ng-blur="visitedEmail = true" ng-focus="visitedEmail = false" placeholder="Enter your email" required/>
                         <!--<span class="error" ng-show="signinForm.email.$error.required && visitedEmail">Email is required</span>-->
                         <span class="error" ng-show="!signinForm.email.$error.required && signinForm.email.$invalid && visitedEmail">Entered email is not valid</span>
                     </div>
                     <div class="form-group">
-                        <input type="password" id="password" name="password" ng-model="user.password" class="form-control" ng-class="{'error-field': signinForm.password.$error.required && visitedPwd}" ng-blur="visitedPwd = true" ng-focus="visitedPwd = false" placeholder="Password" required/>
+                        <input type="password" id="password" name="password" ng-model="user.user_password" class="form-control" ng-class="{'error-field': signinForm.password.$error.required && visitedPwd}" ng-blur="visitedPwd = true" ng-focus="visitedPwd = false" placeholder="Password" required/>
                         <!--<span class="error" ng-show="signinForm.password.$error.required && visitedPwd">Password is required</span>-->
                     </div>
                     <button type="submit" class="btn btn-login-module" ng-disabled="signinForm.$invalid || engagetoApp.isLoading">Login
-                        <engageto-loader-image ng-if="engagetoApp.isLoading"></engageto-loader-image>
+                        <admin-loader-image ng-if="login.isLoading"></admin-loader-image>
                     </button>
                 </form>
                 <a ui-sref="forgotPasswordRequest" class="bottom-left-text">Forgot password?</a>
