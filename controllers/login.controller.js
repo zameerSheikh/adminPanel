@@ -33,7 +33,6 @@
         }
 
         function adminLogin(data){
-            console.log('data: ', data);
             $scope.login.isLoading = true;
             LoginService.loginAdmin(data).then(function(loginResponse){
                 console.log('response: ', loginResponse);
