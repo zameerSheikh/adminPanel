@@ -18,7 +18,8 @@
         $rootScope.adminApp = {
             toState: '',
             isSidePanelRequired: false,
-            logout:logout
+            logout:logout,
+            isUnderMaintainance: false
         };
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {

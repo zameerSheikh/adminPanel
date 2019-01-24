@@ -38,17 +38,18 @@
                 console.log('response: ', loginResponse);
                 $localStorage.token = loginResponse.headers('sid');
                 $localStorage.adminId = loginResponse.data.data.admin_uuid;
+                $rootScope.isUnderMaintainance = loginResponse.data.data.maintenance_mode;
                 AdminAppService.showSuccessMessage('Login Successfull');
                 $timeout(function(){
                     $scope.login.isLoading = false;
+                    if($rootScope.isUnderMaintainance)
+                    $state.go('maintainanceMode');
+                    else
                     $state.go('users');
-                },2000);
+                },1500);
             }).catch(function(error){
                 $scope.login.isLoading = false;
             });
-            // if(data.password === 'India@123'){
-            //     $state.go('users');
-            // }
         }
     }
-}())
+}());
