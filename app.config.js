@@ -1,47 +1,50 @@
-"use strict"
+(function(){
 
-adminApp.config(appConfig);
+    "use strict";
 
-appConfig.$inject = [
-    '$stateProvider',
-    '$urlRouterProvider',
-    '$locationProvider',
-    '$urlMatcherFactoryProvider'
-];
+    adminApp.config(appConfig);
 
-function appConfig(
-    $stateProvider,
-    $urlRouterProvider,
-    $locationProvider,
-    $urlMatcherFactoryProvider
-){
-    $urlRouterProvider.otherwise('/login');
+    appConfig.$inject = [
+        '$stateProvider',
+        '$urlRouterProvider',
+        '$locationProvider',
+        '$urlMatcherFactoryProvider'
+    ];
 
-    $stateProvider
+    function appConfig(
+        $stateProvider,
+        $urlRouterProvider,
+        $locationProvider,
+        $urlMatcherFactoryProvider
+    ){
+        $urlRouterProvider.otherwise('/login');
 
-    .state('login', {
-        url          : '/login',
-        templateUrl  : 'views/login.html',
-        controller   : 'LoginController'
-    })
+        $stateProvider
 
-    .state('users',{
-        url          : '/users',
-        templateUrl  : 'views/users.html',
-        controller   : 'UsersController'
-    })
+        .state('login', {
+            url          : '/login',
+            templateUrl  : 'views/login.html',
+            controller   : 'LoginController'
+        })
 
-    .state('maintainanceMode',{
-        url          : '/maintainance',
-        templateUrl  : 'views/maintainance.html',
-        controller   : 'MaintainanceController'
-    })
-    .state('domain',{
-        url          : '/domains',
-        templateUrl  : 'views/domains.html',
-        controller   : 'DomainsController'
-    });
+        .state('users',{
+            url          : '/users',
+            templateUrl  : 'views/users.html',
+            controller   : 'UsersController'
+        })
+
+        .state('maintainanceMode',{
+            url          : '/maintainance',
+            templateUrl  : 'views/maintainance.html',
+            controller   : 'MaintainanceController'
+        })
+        .state('domain',{
+            url          : '/domains',
+            templateUrl  : 'views/domains.html',
+            controller   : 'DomainsController'
+        });
 
     //$locationProvider.html5Mode(true);
     //$urlMatcherFactoryProvider.strictMode(false);
 }
+}());
